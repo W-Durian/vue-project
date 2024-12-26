@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
-import { LngLat, Map } from 'mapbox-gl'
+import { Map } from 'mapbox-gl'
 
 const props = defineProps({
-  center: LngLat,
+  center: Array,
   zoom: Number,
   pitch: Number
 })
@@ -19,7 +19,7 @@ const createMap = () => {
     logoPosition: 'bottom-right',
     bearing: 0,
     preserveDrawingBuffer: true,
-    center: props.center || [113.261503, 23.131377],
+    center: (props.center as never) || [113.261503, 23.131377],
     zoom: props.zoom || 7,
     pitch: props.pitch || 0
   })

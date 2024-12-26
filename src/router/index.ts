@@ -13,6 +13,18 @@ const router = createRouter({
       path: '/map',
       name: 'map',
       component: () => import('@/views/mapboxgl/Index.vue')
+    },
+    {
+      path: '/webgl',
+      name: 'webgl',
+      component: () => import('@/views/webgl/Index.vue'),
+      children: [
+        {
+          path: ':id',
+          name: 'webglDetail',
+          component: () => import('@/views/webgl/Detail.vue')
+        }
+      ]
     }
   ]
 })

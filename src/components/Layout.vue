@@ -16,10 +16,24 @@ const menus = ref<Menu[]>([
   { id: '1', title: '个人简历', path: '/', level: 1, icon: 'User' },
   {
     id: '2',
-    title: '地图知识',
+    title: '地图资料',
     path: '/map',
     level: 1,
-    icon: 'Location'
+    icon: 'Location',
+    children: [
+      {
+        id: '2-1',
+        title: '基于mapbox地图的叠加',
+        path: '/map',
+        level: 2
+      },
+      {
+        id: '2-2',
+        title: '基于webgl的练习',
+        path: '/webgl',
+        level: 2
+      }
+    ]
   },
   { id: '3', title: '前端资料', path: '/', level: 1, icon: 'Document' },
   { id: '4', title: '其他资料', path: '/', level: 1, icon: 'Guide' }
